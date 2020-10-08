@@ -1,0 +1,15 @@
+<mat-list *ngIf="usuaio; else semRegistro">
+  <mat-list-item> Nome: {{usuaio.name}} </mat-list-item>
+  <mat-list-item> E-mail: {{usuaio.email}} </mat-list-item>
+  <mat-list-item> Id: {{usuaio.id}} </mat-list-item>
+</mat-list>
+<mat-card>
+  <mat-card-actions>
+    <button color="accent" mat-raised-button (click)="editar()">Editar</button>
+    <button color="warn" mat-raised-button (click)="excluir()">Excluir</button>
+  </mat-card-actions>
+</mat-card>
+
+<ng-template #semRegistro>
+  <h1 class="full-width main-div">Nenhum registro encontrado!</h1>
+</ng-template>

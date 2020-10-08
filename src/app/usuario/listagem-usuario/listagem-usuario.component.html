@@ -1,0 +1,20 @@
+<mat-toolbar class="app-title">Cadastrados</mat-toolbar>
+
+<div  class="home-content"
+      infiniteScroll
+      (scrolled)="onScroll()"
+      *ngIf="usuarios?.length; else semRegistro">
+  <mat-card class="home-card" *ngFor="let user of usuarios">
+    <mat-card-header>
+      <mat-card-title>Nome: {{user.name}}</mat-card-title>
+      <mat-card-subtitle>E-mail: {{user.email}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="accent" mat-raised-button (click)="abrir(user.id)">ABRIR</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<ng-template #semRegistro>
+  <h1 class="full-width main-div">Nenhum registro encontrado!</h1>
+</ng-template>

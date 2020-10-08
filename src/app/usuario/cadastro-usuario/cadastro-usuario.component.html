@@ -1,0 +1,28 @@
+<mat-toolbar class="app-title">Cadastrar</mat-toolbar>
+<div class="main-div">
+  <mat-card class="center width50" *ngIf="cadastro">
+    <form
+      autocomplete="off"
+      novalidate
+      [formGroup]="cadastro"
+      (ngSubmit)="submit()"
+    >
+      <mat-card-content>
+        <spo-input-text
+          titulo="Nome *"
+          controlName="name"
+          [formGroup]="cadastro"
+        ></spo-input-text>
+        <spo-input-text
+          titulo="Email *"
+          controlName="email"
+          [formGroup]="cadastro"
+        ></spo-input-text>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" color="accent" mat-raised-button>Salvar</button>
+        <button type="reset" color="warn" (click)="voltarForm()" mat-raised-button>Voltar</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
